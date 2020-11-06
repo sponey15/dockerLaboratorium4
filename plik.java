@@ -52,7 +52,7 @@ public class plik {
 	stmt = conn.createStatement();
 		
 	System.out.println("ID");
-	id = in.nextLine();
+	id = id.nextLine();
 
         System.out.println("Enter first name:");
         firstName = in.nextLine();
