@@ -10,11 +10,11 @@ public class plik {
    static final String USER = "kkalan";
    static final String PASS = "kkalan1";
    static Scanner in = new Scanner( System.in);
-   static Connection conn = null;
-   static Statement stmt = null;
+   //static Connection conn = null;
+   //static Statement stmt = null;
    static String option;
    static int Id;
-   static String id;
+   static String newId;
    static String firstName;
    static String lastName;
    static String phoneNumber;
@@ -24,6 +24,9 @@ public class plik {
 	
    public static void displayNumbers()
    {
+	Connection conn = null;
+   	Statement stmt = null;
+	   
 	try{
 	sql = "SELECT ID, FirstName, LastName, PhoneNumber FROM ContactBook";
 	conn = DriverManager.getConnection(DB_URL,USER,PASS);
@@ -47,12 +50,15 @@ public class plik {
 
    public static void addNumber()
    {
+	Connection conn = null;
+   	Statement stmt = null;
+	   
 	try{
 	conn = DriverManager.getConnection(DB_URL,USER,PASS);
 	stmt = conn.createStatement();
 		
 	System.out.println("ID:");
-	id = in.nextLine();
+	newId = in.nextLine();
 
         System.out.println("Enter first name:");
         firstName = in.nextLine();
@@ -63,7 +69,7 @@ public class plik {
         System.out.println("Enter phone number:");
         phoneNumber = in.nextLine();
 
-        sql = " INSERT INTO ContactBook (ID, FirstName, LastName, PhoneNumber) VALUES ('"+id+"', '"+firstName+"', '"+lastName+"', '"+phoneNumber+"')";
+        sql = " INSERT INTO ContactBook (ID, FirstName, LastName, PhoneNumber) VALUES ('"+newId+"', '"+firstName+"', '"+lastName+"', '"+phoneNumber+"')";
         System.out.println("sql:"+sql);
         stmt.executeUpdate(sql);
 	}catch(SQLException se){
@@ -73,12 +79,15 @@ public class plik {
 
    public static void editNumber()
    {
+	Connection conn = null;
+   	Statement stmt = null;
+	   
 	try{
 	conn = DriverManager.getConnection(DB_URL,USER,PASS);
 	stmt = conn.createStatement();
 		
         System.out.println("Enter ID of number that you want to edit:");
-        id = in.nextLine();
+        newId = in.nextLine();
 
         System.out.println("Enter first name:");
         firstName = in.nextLine();
@@ -89,7 +98,7 @@ public class plik {
         System.out.println("Enter phone number:");
 	phoneNumber = in.nextLine();
 
-        sql = " UPDATE ContactBook SET FirstName = '"+firstName+"' , LastName = '"+lastName+"', PhoneNumber = '"+phoneNumber+"' WHERE ID= '"+id+"';";
+        sql = " UPDATE ContactBook SET FirstName = '"+firstName+"' , LastName = '"+lastName+"', PhoneNumber = '"+phoneNumber+"' WHERE ID= '"+newId+"';";
         stmt.executeUpdate(sql);
 	}catch(SQLException se){
 	      se.printStackTrace();
@@ -98,13 +107,16 @@ public class plik {
 
    public static void deleteNumber()
    {
+       Connection conn = null;
+       Statement stmt = null;
+	   
        try{
        conn = DriverManager.getConnection(DB_URL,USER,PASS);
        stmt = conn.createStatement();
 	       
        System.out.println("Enter ID of number that you want to delete");
-       id = in.nextLine();
-       sql = " DELETE FROM ContactBook WHERE ID= '"+id+"';";
+       newId = in.nextLine();
+       sql = " DELETE FROM ContactBook WHERE ID= '"+newId+"';";
        stmt.executeUpdate(sql);
 	}catch(SQLException se){
 	      se.printStackTrace();
@@ -117,7 +129,8 @@ public class plik {
       TimeUnit.SECONDS.sleep(10);
       Class.forName("com.mysql.jdbc.Driver");
       System.out.println("Connecting to database...");
-      
+      Connection conn = null;
+      Statement stmt = null;
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
       stmt = conn.createStatement();
       
