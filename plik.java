@@ -12,7 +12,8 @@ public class plik {
    static Scanner in = new Scanner( System.in);
    static Connection conn = null;
    static Statement stmt = null;
-   static int option; 
+   static int option;
+   static int Id;
    static String id;
    static String firstName;
    static String lastName;
@@ -29,7 +30,7 @@ public class plik {
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery(sql);
 	while(rs.next()){
-	  	 int id  = rs.getInt("ID");
+	  	 Id  = rs.getInt("ID");
 		 firstName = rs.getString("FirstName");
 		 lastName = rs.getString("LastName");
 		 phoneNumber = rs.getString("PhoneNumber");
