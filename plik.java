@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 
 public class plik {
    static final String JDBC_DRIVER = "com.mysql.jdbc.Driver";  
-   static final String DB_URL = "jdbc:mysql://db:3306/KKalan";
+   static final String DB_URL = "jdbc:mysql://Full202086308:3306/KKalan";
 
    static final String USER = "kkalan";
    static final String PASS = "kkalan1";
