@@ -20,6 +20,7 @@ public class plik {
    static ResultSet rs;
    static String sql;
 
+	
    public static void displayNumbers()
    {
 	try{
@@ -46,6 +47,9 @@ public class plik {
    public static void addNumber()
    {
 	try{
+	conn = DriverManager.getConnection(DB_URL,USER,PASS);
+	stmt = conn.createStatement();
+		
 	System.out.println("ID");
 	id = in.nextLine();
 
@@ -69,6 +73,9 @@ public class plik {
    public static void editNumber()
    {
 	try{
+	conn = DriverManager.getConnection(DB_URL,USER,PASS);
+	stmt = conn.createStatement();
+		
         System.out.println("Enter ID of number that you want to edit");
         id = in.nextLine();
 
@@ -90,7 +97,10 @@ public class plik {
 
    public static void deleteNumber()
    {
-	try{
+       try{
+       conn = DriverManager.getConnection(DB_URL,USER,PASS);
+       stmt = conn.createStatement();
+	       
        System.out.println("Enter ID of number that you want to delete");
        id = in.nextLine();
        sql = " DELETE FROM ContactBook WHERE ID= '"+id+"';";
