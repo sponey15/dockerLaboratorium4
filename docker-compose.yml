@@ -1,0 +1,41 @@
+version: "3.7"
+ 
+services:
+ 
+ myapp-mysql:
+  image: mysql:latest
+  container_name: Full202086308
+  environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=KKalan
+      - MYSQL_USER=kkalan
+      - MYSQL_PASSWORD=kkalan1
+  volumes:
+      - database:/var/lib/myapp-mysql
+  ports:
+      - 3306:3306
+  networks:
+   Bridge−Zadanie−1:
+    ipv4_address: 10.0.10.3 
+  
+ myapp-java:
+  image: sponey15/dockerLaboratorium4:latest
+  restart: on-failure
+  depends_on:
+      - myapp-mysql
+  ports:
+      - 8080:8080
+  stdin_open: true
+  container_name: MyappJava
+  networks:
+      - Bridge−Zadanie−1
+
+networks:
+ Bridge−Zadanie−1:
+  driver: bridge
+  ipam:
+   config:
+    - subnet: 10.0.10.0/24
+
+volumes:
+ database: {}
