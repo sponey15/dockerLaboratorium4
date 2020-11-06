@@ -15,7 +15,7 @@ services:
   ports:
       - 3306:3306
   networks:
-   Bridge−Zadanie−1:
+   BridgeZadanie1:
     ipv4_address: 10.0.10.3 
   
  myapp-java:
@@ -28,10 +28,10 @@ services:
   stdin_open: true
   container_name: MyappJava
   networks:
-      - Bridge−Zadanie−1
+      - BridgeZadanie1
 
 networks:
- Bridge−Zadanie−1:
+ BridgeZadanie1:
   driver: bridge
   ipam:
    config:
