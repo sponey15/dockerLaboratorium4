@@ -10,8 +10,8 @@ public class plik {
    static final String USER = "kkalan";
    static final String PASS = "kkalan1";
    static Scanner in = new Scanner( System.in);
-   //static Connection conn = null;
-   //static Statement stmt = null;
+   static Connection conn = null;
+   static Statement stmt = null;
    static String option;
    static int Id;
    static String newId;
@@ -23,10 +23,7 @@ public class plik {
 
 	
    public static void displayNumbers()
-   {
-	Connection conn = null;
-   	Statement stmt = null;
-	   
+   {   
 	try{
 	sql = "SELECT ID, FirstName, LastName, PhoneNumber FROM ContactBook";
 	conn = DriverManager.getConnection(DB_URL,USER,PASS);
@@ -49,10 +46,7 @@ public class plik {
    }
 
    public static void addNumber()
-   {
-	Connection conn = null;
-   	Statement stmt = null;
-	   
+   {   
 	try{
 	conn = DriverManager.getConnection(DB_URL,USER,PASS);
 	stmt = conn.createStatement();
@@ -78,10 +72,7 @@ public class plik {
    }
 
    public static void editNumber()
-   {
-	Connection conn = null;
-   	Statement stmt = null;
-	   
+   {	   
 	try{
 	conn = DriverManager.getConnection(DB_URL,USER,PASS);
 	stmt = conn.createStatement();
@@ -106,10 +97,7 @@ public class plik {
    }
 
    public static void deleteNumber()
-   {
-       Connection conn = null;
-       Statement stmt = null;
-	   
+   {   
        try{
        conn = DriverManager.getConnection(DB_URL,USER,PASS);
        stmt = conn.createStatement();
@@ -129,8 +117,7 @@ public class plik {
       TimeUnit.SECONDS.sleep(10);
       Class.forName("com.mysql.jdbc.Driver");
       System.out.println("Connecting to database...");
-      Connection conn = null;
-      Statement stmt = null;
+
       conn = DriverManager.getConnection(DB_URL,USER,PASS);
       stmt = conn.createStatement();
       
