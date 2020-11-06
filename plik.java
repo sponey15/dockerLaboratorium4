@@ -1,5 +1,6 @@
 import java.sql.*;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 
 public class plik {
@@ -22,6 +23,7 @@ public class plik {
    public static void displayNumbers()
    {
 	try{
+	TimeUnit.SECONDS.sleep(10);
 	sql = "SELECT PersonID, FirstName, LastName, Address, City FROM Persons";
 	conn = DriverManager.getConnection(DB_URL,USER,PASS);
 	stmt = conn.createStatement();
