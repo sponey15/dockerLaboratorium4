@@ -51,8 +51,8 @@ public class plik {
 	conn = DriverManager.getConnection(DB_URL,USER,PASS);
 	stmt = conn.createStatement();
 		
-	System.out.println("ID");
-	id = id.nextLine();
+	System.out.println("ID:");
+	id = in.nextLine();
 
         System.out.println("Enter first name:");
         firstName = in.nextLine();
@@ -77,7 +77,7 @@ public class plik {
 	conn = DriverManager.getConnection(DB_URL,USER,PASS);
 	stmt = conn.createStatement();
 		
-        System.out.println("Enter ID of number that you want to edit");
+        System.out.println("Enter ID of number that you want to edit:");
         id = in.nextLine();
 
         System.out.println("Enter first name:");
@@ -127,21 +127,21 @@ public class plik {
 
       do{
 	 System.out.println("1. Add new number \n2. Display all numbers\n3. Edit number\n4. Delete number\n5. Exit application");
-         option = in.nextInt();
+         option = in.nextChar();
 	
-	 if(option == 1)
+	 if(option == '1')
 	 {
 	    addNumber();
 	 }
-	 else if(option == 2)
+	 else if(option == '2')
 	 {
 	    displayNumbers();
 	 }
- 	 else if(option == 3)
+ 	 else if(option == '3')
 	 {
 	    editNumber();
 	 }
-	 else if(option == 4)
+	 else if(option == '4')
 	 {
 	    deleteNumber();
 	 }
