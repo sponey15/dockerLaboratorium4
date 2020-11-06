@@ -12,7 +12,7 @@ public class plik {
    static Scanner in = new Scanner( System.in);
    static Connection conn = null;
    static Statement stmt = null;
-   static int option;
+   static String option;
    static int Id;
    static String id;
    static String firstName;
@@ -127,21 +127,21 @@ public class plik {
 
       do{
 	 System.out.println("1. Add new number \n2. Display all numbers\n3. Edit number\n4. Delete number\n5. Exit application");
-         option = in.nextChar();
+         option = in.nextLine();
 	
-	 if(option == '1')
+	 if(option == "1")
 	 {
 	    addNumber();
 	 }
-	 else if(option == '2')
+	 else if(option == "2")
 	 {
 	    displayNumbers();
 	 }
- 	 else if(option == '3')
+ 	 else if(option == "3")
 	 {
 	    editNumber();
 	 }
-	 else if(option == '4')
+	 else if(option == "4")
 	 {
 	    deleteNumber();
 	 }
@@ -150,7 +150,7 @@ public class plik {
 	    System.out.println("You choosed wrong option.");
 	 }
          
-      }while (option!=5);
+      }while (!option.equals("5"));
 
       rs.close();
       stmt.close();
