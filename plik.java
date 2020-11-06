@@ -25,7 +25,7 @@ public class plik {
    public static void displayNumbers()
    {
 	try{
-	sql = "SELECT PersonID, FirstName, LastName, Address, City FROM Persons";
+	sql = "SELECT ID, FirstName, LastName, PhoneNumber FROM ContactBook";
 	conn = DriverManager.getConnection(DB_URL,USER,PASS);
 	stmt = conn.createStatement();
 	rs = stmt.executeQuery(sql);
