@@ -23,7 +23,6 @@ public class plik {
    public static void displayNumbers()
    {
 	try{
-	TimeUnit.SECONDS.sleep(10);
 	sql = "SELECT PersonID, FirstName, LastName, Address, City FROM Persons";
 	conn = DriverManager.getConnection(DB_URL,USER,PASS);
 	stmt = conn.createStatement();
@@ -104,6 +103,7 @@ public class plik {
    public static void main(String[] args) {
    
    try{
+      TimeUnit.SECONDS.sleep(10);
       Class.forName("com.mysql.jdbc.Driver");
       System.out.println("Connecting to database...");
       
