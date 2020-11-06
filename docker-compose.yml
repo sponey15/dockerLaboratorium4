@@ -19,7 +19,7 @@ services:
     ipv4_address: 10.0.10.3 
   
  myapp-java:
-  image: sponey15/dockerLaboratorium4:latest
+  image: karol54321/dockerlaboratorium4:latest
   restart: on-failure
   depends_on:
       - myapp-mysql
