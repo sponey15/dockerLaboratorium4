@@ -129,19 +129,19 @@ public class plik {
 	 System.out.println("1. Add new number \n2. Display all numbers\n3. Edit number\n4. Delete number\n5. Exit application");
          option = in.nextLine();
 	
-	 if(option == "1")
+	 if(option.equals("1"))
 	 {
 	    addNumber();
 	 }
-	 else if(option == "2")
+	 else if(option.equals("2"))
 	 {
 	    displayNumbers();
 	 }
- 	 else if(option == "3")
+ 	 else if(option.equals("3"))
 	 {
 	    editNumber();
 	 }
-	 else if(option == "4")
+	 else if(option.equals("4"))
 	 {
 	    deleteNumber();
 	 }
