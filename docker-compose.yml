@@ -6,10 +6,10 @@ services:
   image: mysql:latest
   container_name: Full202086308
   environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=KKalan
-      - MYSQL_USER=kkalan
-      - MYSQL_PASSWORD=kkalan1
+      MYSQL_ROOT_PASSWORD: "root"
+      MYSQL_DATABASE: "KKalan"
+      MYSQL_USER: "kkalan"
+      MYSQL_PASSWORD: "kkalan1"
   volumes:
       - database:/var/lib/myapp-mysql
   ports:
@@ -26,6 +26,7 @@ services:
   ports:
       - 8080:8080
   stdin_open: true
+  tty: true
   container_name: MyappJava
   networks:
       - BridgeZadanie1
