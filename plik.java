@@ -35,7 +35,7 @@ public class plik {
 		 lastName = rs.getString("LastName");
 		 phoneNumber = rs.getString("PhoneNumber");
 
-		 System.out.println(id+"    "+firstName+"    "+lastName+"    "+phoneNumber);
+		 System.out.println(id+"    "+firstName+"    "+lastName+"    "+phoneNumber+"\n");
 	} rs.close();
 	}catch(SQLException se){
 	      se.printStackTrace();
