@@ -1,0 +1,9 @@
+1. Nalezy pobrac z githuba plik docker-compose.yml oraz umiescic go w folderze home na naszym systemie linux
+2. W konsoli nalezy wpisac polecenia:
+docker-compose up -d
+docker attach MyappJava
+3. Po przetestwaniu aplikacji mozna ja usunac polecenieami:
+docker-compose down
+docker images
+docker image rm -f 96836d10dc97	 nalezy podac odpowiedni image id w miejsu "96836d10dc97"
+
